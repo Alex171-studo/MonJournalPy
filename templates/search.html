@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+  <div class="container container-max-width py-4">
+    <h3 class="text-center">Résultats de recherche</h3> 
+    <div class="search-container mb-4">
+        <form class="search-form" action="{{ url_for('search') }}" method="GET">
+            <input type="text" name="query" id="query" class="form-control" placeholder="Rechercher un post par titre ou contenu" value="{{ query | default('') }}" required> 
+            <button type="submit" class="btn btn-primary">Rechercher</button>
+        </form>
+    </div>
+
+    <div class="row notes-grid-container" id="notes-list">
+      {% if posts %}
+        {% for post in posts %}
+        <div class="col-lg-4 col-md-6 mb-4"> 
+          <div class="card note-card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{post.title}}</h5>
+              <p class="card-text flex-grow-1">{{post.content}}</p>
+              <p class="card-text text-muted-custom">{{post.date_posted.strftime("Posté le %d %B %Y à %H:%M")}}</p>
+              <div class="card-actions mt-auto">
+                <a href="/edit_post/{{post.id}}" class="btn btn-sm btn-outline-primary">Modifier</a>
+                <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST" class="d-inline">
+                  <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce post ?');">Supprimer</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="col-12">
+          <p class="empty-state text-center">Aucun résultat obtenu. <a href="{{url_for('about')}}">Retour aux notes</a></p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

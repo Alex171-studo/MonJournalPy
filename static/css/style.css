@@ -1,0 +1,458 @@
+
+:root {
+    --primary-color: #28a745; 
+    --primary-hover-color: #218838;
+    --secondary-color: #6c757d; 
+    --secondary-hover-color: #5a6268;
+    --danger-color: #dc3545; 
+    --danger-hover-color: #c82333;
+    --info-color: #17a2b8; 
+    --info-hover-color: #138496;
+    --card-background: #ffffff;
+    --border-color-light: #e0e0e0; 
+    --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+    --fast-transition-speed: 0.15s;
+}
+
+/* --- Généralités et Réinitialisation --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; 
+    color: #343a40;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.main-content-padding {
+    padding-top: 80px; 
+    padding-bottom: 40px;
+}
+
+.container-max-width {
+    max-width: 960px;
+}
+
+/* --- Navbar  --- */
+.custom-navbar {
+    border-bottom: 1px solid var(--border-color-light);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); 
+    animation: fadeInDown 0.5s ease-out;
+}
+
+.navbar-brand {
+    font-weight: 700 !important; 
+    letter-spacing: -0.5px;
+}
+
+.custom-nav-link {
+    font-weight: 500;
+    color: var(--secondary-color) !important;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color var(--fast-transition-speed) ease, color var(--fast-transition-speed) ease, transform var(--fast-transition-speed) ease;
+}
+
+.custom-nav-link:hover {
+    background-color: rgba(40, 167, 69, 0.1); 
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.custom-btn-outline-danger {
+    border: 1px solid var(--danger-color) !important;
+    color: var(--danger-color) !important;
+    background-color: transparent !important;
+    font-weight: 500;
+    transition: all var(--fast-transition-speed) ease;
+}
+
+.custom-btn-outline-danger:hover {
+    background-color: var(--danger-color) !important;
+    color: white !important;
+    transform: translateY(-1px);
+}
+
+
+/* --- Titres et Texte --- */
+h3 {
+    font-size: 2.2em; 
+    color: #343a40;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+    text-align: center;
+    letter-spacing: -0.5px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.card-title {
+    font-size: 1.5em; 
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 0.95em;
+    color: #6c757d;
+}
+
+.text-muted-custom {
+    font-size: 0.85em;
+    color: #888 !important;
+    margin-top: 5px;
+}
+
+.empty-state {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    animation: fadeIn 0.7s ease-out;
+}
+
+.empty-state a {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.empty-state a:hover {
+    color: var(--primary-hover-color);
+    text-decoration: underline;
+}
+
+/* --- Cards (Formulaires et Notes) --- */
+.card {
+    border-radius: 12px; 
+    box-shadow: var(--shadow-light);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card:hover {
+    transform: translateY(-3px); 
+    box-shadow: var(--shadow-medium);
+}
+
+.card-body {
+    padding: 30px; 
+}
+
+/* --- Formulaires  --- */
+.form-label {
+    font-weight: 500;
+    color: #343a40;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    border-radius: 8px; 
+    padding: 12px 15px; 
+    font-size: 1em;
+    border: 1px solid var(--border-color-light);
+    transition: border-color var(--fast-transition-speed) ease, box-shadow var(--fast-transition-speed) ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+    outline: none;
+}
+
+textarea.form-control {
+    min-height: 120px; 
+    resize: vertical;
+}
+
+/* --- Boutons  --- */
+.btn {
+    border-radius: 8px;
+    padding: 12px 25px; 
+    font-weight: 600;
+    transition: all var(--transition-speed) cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover-color) !important;
+    border-color: var(--primary-hover-color) !important;
+}
+
+.btn-success {
+    background-color: var(--primary-color) !important;  
+    border-color: var(--primary-color) !important;
+}
+
+.btn-success:hover {
+    background-color: var(--primary-hover-color) !important;
+    border-color: var(--primary-hover-color) !important;
+}
+
+.btn-outline-secondary {
+    border: 1px solid var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+}
+
+.btn-outline-danger {
+    border: 1px solid var(--danger-color) !important;
+    color: var(--danger-color) !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-danger:hover {
+    background-color: var(--danger-color) !important;
+    color: white !important;
+}
+
+/* --- Alertes  --- */
+.alert {
+    border-radius: 10px;
+    font-size: 1em;
+    padding: 15px 20px;
+    animation: fadeIn 0.6s ease-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Toasts  --- */
+.toast-container-custom {
+    top: 80px !important; 
+    right: 20px !important;
+    padding: 0 !important;
+}
+
+.toast {
+    border-radius: 8px !important;
+    min-width: 280px;
+    max-width: 350px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    animation: slideInRight 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    padding-right: 20px;
+}
+
+.toast-body {
+    padding: 15px 20px !important;
+    font-weight: 500;
+}
+
+.progress-flash {
+    height: 3px; 
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 0%; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: progressShrink 2.5s linear forwards;
+}
+
+.toast.show .progress-flash {
+    width: 100%; 
+}
+
+.btn-close-white {
+    filter: brightness(0) invert(1);
+}
+
+/* --- Recherche --- */
+.search-container {
+    margin-bottom: 40px;
+    animation: fadeInScale 0.7s ease-out;
+}
+
+.search-form {
+    display: flex;
+    max-width: 600px; 
+    width: 100%;
+    margin: 0 auto; 
+    background-color: var(--card-background);
+    padding: 10px;
+    border-radius: 10px; 
+    box-shadow: var(--shadow-light);
+    transition: box-shadow var(--transition-speed) ease;
+}
+
+.search-form:focus-within {
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.2), var(--shadow-medium); 
+}
+
+.search-form input {
+    flex: 1;
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 1em;
+    transition: border-color var(--fast-transition-speed) ease;
+}
+
+.search-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.search-form button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-weight: 600;
+    transition: background-color var(--fast-transition-speed) ease, transform var(--fast-transition-speed) ease;
+}
+
+.search-form button:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-1px);
+}
+
+/* --- Liste des Notes  --- */
+.notes-grid-container {
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+.note-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; 
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes progressShrink {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* ---  Responsivité --- */
+@media (max-width: 991.98px) { 
+    .custom-navbar .navbar-nav {
+        margin-top: 10px;
+        align-items: flex-start; 
+    }
+    .custom-navbar .nav-item {
+        width: 100%;
+    }
+    .custom-navbar .nav-link,
+    .custom-navbar .btn {
+        text-align: left;
+        padding-left: 0; 
+    }
+    .custom-navbar .btn {
+        width: auto; 
+    }
+    .main-content-padding {
+        padding-top: 60px; 
+    }
+    .toast-container-custom {
+        top: 60px !important; 
+        right: 10px !important;
+        left: 10px !important; 
+        width: auto;
+    }
+    .toast {
+        min-width: unset;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) { 
+    h3 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .card-body {
+        padding: 20px;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .search-form {
+        flex-direction: column;
+        padding: 8px;
+    }
+    .search-form input {
+        margin-bottom: 10px;
+        margin-left: 0;
+        width: 100%;
+    }
+    .search-form button {
+        margin-left: 0;
+        width: 100%;
+    }
+    .toast {
+        min-width: unset;
+        max-width: 100%;
+    }
+}
