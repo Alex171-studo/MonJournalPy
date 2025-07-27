@@ -13,10 +13,8 @@
 3.  [Technologies Utilisées](#technologies-utilisées)
 4.  [Aspects de Sécurité](#aspects-de-sécurité)
 5.  [Installation et Lancement](#installation-et-lancement)
-6.  [Utilisation](#utilisation)
-7.  [Arborescence du Projet](#arborescence-du-projet)
-8.  [Licence](#licence)
-9.  [Contact](#contact)
+6.  [Arborescence du Projet](#arborescence-du-projet)
+
 
 ---
 
@@ -90,7 +88,7 @@ Suivez ces étapes pour configurer et exécuter MonJournalPy localement.
 
 1.  **Clonez le dépôt :**
     ```bash
-    git clone https://github.com/VotreNomDUtilisateur/MonJournalPy.git
+    git clone https://github.com/Alex171-studo/MonJournalPy.git
     cd MonJournalPy
     ```
 
@@ -119,9 +117,10 @@ Suivez ces étapes pour configurer et exécuter MonJournalPy localement.
     ```bash
     pip install Flask Flask-SQLAlchemy Werkzeug
     ```
+            
 
 5.  **Créez la base de données :**
-    Assurez-vous d'avoir un fichier `create_db.py` avec le contenu suivant pour créer les tables de la base de données :
+    Assurez-vous que le fichier `create_db.py` existe déjà avec le contenu suivant pour créer les tables de la base de données :
     ```python
     from app import app, db
     with app.app_context():
@@ -130,9 +129,14 @@ Suivez ces étapes pour configurer et exécuter MonJournalPy localement.
     ```
 
     Exécutez ensuite :
-    ```bash
-    python create_db.py
-    ```
+    * **Windows :**
+        ```bash
+        python create_db.py
+        ```
+    * **macOS / Linux :**
+        ```bash
+        python3 create_db.py
+        ```
 
 6.  **Définissez les variables d'environnement (optionnel mais recommandé pour la clé secrète) :**
     * Créez un fichier `.env` à la racine du projet ou définissez les variables directement dans votre terminal :
@@ -151,17 +155,49 @@ Suivez ces étapes pour configurer et exécuter MonJournalPy localement.
     ```bash
     flask run
     ```
-
+    Mais je vous conseille fortement de s'assurer d'être à la racine du projet et d'exécuter
+    * **Windows :**
+        ```bash
+        python app.py
+        ```
+    * **macOS / Linux :**
+        ```bash
+        python3 app.py
+        ```
 8.  **Accédez à l'application :**
     Ouvrez votre navigateur et naviguez vers `http://127.0.0.1:5000/`.
+    
 
----
+## 7. **Arborescence du projet**
+    MonJournalPy/
+        ├── .venv/
+        |── images/              
+        │   ├── img1.png
+        │   ├── img2.png
+        │   ├── img3.png
+        │   ├── img3.png
+        │   ├── img5.png              
+        ├── instance/               
+        │   └── users.sqlite3
+        ├── static/              
+        │   ├── css/              
+        │       ├── style.css/g
+        │   ├── images/
+        │       ├── logo.png
+        ├── templates/              
+        │   ├── base.html
+        │   ├── login.html
+        │   ├── register.html
+        │   ├── about.html
+        │   ├── add_post.html
+        │   ├── edit_post.html
+        │   └── search.html
+        ├── app.py                  
+        ├── config.py               
+        ├── models.py               
+        ├── create_db.py            
+        ├── .gitignore             
+        ├── README.md  
 
-### Résumé
+Voys pouvez me suivre sur Linkedin avec ce lien https://www.linkedin.com/in/godwill-aguemon-51a38436a/
 
-- Organise tes images dans un dossier **`images/`**.
-- Utilise un chemin relatif pour référencer tes images locales dans ton fichier `README.md`, comme ceci :
-
-```markdown
-![Capture 1](images/img1.png)
-![Capture 2](images/img2.png)
