@@ -46,6 +46,11 @@ L'objectif de ce projet était d'explorer et de solidifier les compétences en :
 * **Recherche de Notes :** Rechercher des notes par mots-clés dans le titre ou le contenu.
 * **Messages Flash :** Retour d'information utilisateur via des notifications (succès, erreur, information).
 
+    ![Capture de la page de connexion](images/img1.png)
+    ![Capture de la page d'inscription](images/img2.png)
+    ![Capture de la liste des notes](images/img3.png)
+    ![Capture de la page d'ajout](images/img4.png)
+    ![Capture de la page de recherche](images/img5.png)
 ---
 
 ## 3. Technologies Utilisées
@@ -152,35 +157,11 @@ Suivez ces étapes pour configurer et exécuter MonJournalPy localement.
 
 ---
 
-## 6. Utilisation
+### Résumé
 
-1.  **Inscription :** Créez un nouveau compte via la page d'accueil ou `/register`.
-2.  **Connexion :** Connectez-vous avec vos identifiants sur la page d'accueil.
-3.  **Gestion des Notes :** Une fois connecté, vous serez redirigé vers votre tableau de bord (`/about`) où vous pouvez :
-    * Cliquer sur "Ajouter une note" pour créer un nouveau post.
-    * Modifier une note existante en cliquant sur "Modifier".
-    * Supprimer une note en cliquant sur "Supprimer".
-    * Utiliser la barre de recherche pour trouver vos notes par titre ou contenu.
+- Organise tes images dans un dossier **`images/`**.
+- Utilise un chemin relatif pour référencer tes images locales dans ton fichier `README.md`, comme ceci :
 
----
-
-## 7. Arborescence du Projet
-
-MonJournalPy/
-├── .venv/                  # Environnement virtuel (non versionné)
-├── instance/               # Fichiers de données (dont users.sqlite3) (non versionné)
-│   └── users.sqlite3
-├── templates/              # Fichiers HTML Jinja2
-│   ├── base.html
-│   ├── login.html
-│   ├── register.html
-│   ├── about.html
-│   ├── add_post.html
-│   ├── edit_post.html
-│   └── search.html
-├── app.py                  # Logique principale de l'application Flask (routes, etc.)
-├── config.py               # Configuration de l'application et de la BDD
-├── models.py               # Définition des modèles de BDD (User, Post)
-├── create_db.py            # Script pour créer les tables de la BDD
-├── .gitignore              # Fichier pour ignorer les fichiers non essentiels (venv, instance)
-├── README.md              
+```markdown
+![Capture 1](images/img1.png)
+![Capture 2](images/img2.png)
