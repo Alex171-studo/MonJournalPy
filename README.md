@@ -137,7 +137,7 @@ Suivez ces étapes pour configurer et exécuter MonJournalPy localement.
         ```bash
         python3 create_db.py
         ```
-    Si cette étape échoue et que vous ne voyez pas le message base de données créée avec succès  essayez de créez le dossier instance à la racine du projet soit manuellement soit avec:
+    Si cette étape échoue et que vous ne voyez pas le message "base de données créée avec succès"  essayez de créez le dossier instance à la racine du projet soit manuellement soit avec:
     ```bash
     mkdir instance
     ```
