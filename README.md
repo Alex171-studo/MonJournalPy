@@ -138,6 +138,10 @@ Suivez ces étapes pour configurer et exécuter MonJournalPy localement.
         python3 create_db.py
         ```
 
+    Si cette étape échoue et que vous ne voyez pas le message base de données créée avec succès essayez de créez le dossier instance à la racine du projet 
+    ```bash
+        mkdir instance
+        ```
 6.  **Définissez les variables d'environnement (optionnel mais recommandé pour la clé secrète) :**
     * Créez un fichier `.env` à la racine du projet ou définissez les variables directement dans votre terminal :
     ```bash
